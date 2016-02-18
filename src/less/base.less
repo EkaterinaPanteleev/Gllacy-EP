@@ -1,0 +1,41 @@
+body {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: @font-size-base;
+  font-weight: 400;
+  color: #fff;
+  line-height: 22px;
+  background-color: @green-62;
+
+  .slider-radio {
+    display: none;
+  }
+
+}
+
+.main-wrapper {
+  min-width: 1200px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+
+  &:before,
+  &:after {
+    content: "";
+    visibility: hidden;
+    background-image: url("../image/slide2.png");
+  }
+
+  &:after {
+    background-image: url("../image/slide3.png");
+  }
+}
+
+.content-wrapper {
+  width: 1146px;
+  margin: 0 auto;
+  padding: 0 27px;
+}
+
+.container {
+  .clearfix;
+}

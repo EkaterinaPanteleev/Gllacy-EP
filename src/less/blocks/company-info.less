@@ -1,0 +1,74 @@
+.company-info {
+  width: 1116px;
+  border-radius: 13px;
+  padding-top: 22px;
+  padding-left: 20px;
+  padding-right: 10px;
+  margin-bottom: 42px;
+
+  background: @bright-95 url("../image/bg-waffle.jpg") 100% 100%;
+
+  &__title {
+    font-weight: 500;
+    font-size: @font-size-base + 8px;
+    line-height: 30px;
+    color: @dark-20;
+    margin-bottom: 23px;
+  }
+
+  &__features-list {
+    font-size: 0;
+  }
+
+  &__feature {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 493px;
+    padding-left: 57px;
+    margin-bottom: 21px;
+
+    &:nth-child(2n-1) {
+      margin-right: 15px;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 47px;
+      height: 47px;
+      left: 0;
+      top: -14px;
+    }
+
+    &--ice-cream {
+      &::before {
+      background: data-uri("../image/ico-ice-cream.svg") no-repeat;
+      }
+    }
+
+    &--cow {
+      &:before {
+      background: data-uri("../image/ico-cow.svg") no-repeat;
+      }
+    }
+
+    &--eco {
+      &:before {
+      background: data-uri("../image/ico-eco.svg") no-repeat;
+      }
+    }
+
+    &--degree {
+      &:before {
+      background: data-uri("../image/ico-degree.svg") no-repeat;
+      }
+    }
+  }
+
+  &__feature-cont {
+    margin: 0;
+    font-size: @font-size-base;
+    color: @dark-20;
+  }
+}

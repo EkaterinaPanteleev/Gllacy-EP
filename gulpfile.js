@@ -12,21 +12,58 @@ var imagemin = require("gulp-imagemin");
 var uglify = require("gulp-uglify");
 var concat = require("gulp-concat");
 var csscomb = require("gulp-csscomb");
+var svgstore = require('gulp-svgstore');
+var inject = require('gulp-inject');
+var svgmin = require('gulp-svgmin');
+var cheerio = require('gulp-cheerio');
+var path = require('path');
+
+
+gulp.task('svgstore', function () {
+  var svgs = gulp
+    .src('src/image/*.svg')
+
+    .pipe(svgmin(function (file) {
+        var prefix = path.basename(file.relative, path.extname(file.relative));
+        return {
+          plugins: [{
+              cleanupIDs: {
+                  prefix: prefix + '-',
+                  minify: true
+              }
+          }]
+        }
+    }))
+
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(cheerio(function ($) {
+            $('svg').attr('style',  'display:none');
+        }));
+
+    function fileContents (filePath, file) {
+        return file.contents.toString();
+    }
+
+     return gulp
+      .src('src/index.html')
+      .pipe(inject(svgs, { transform: fileContents }))
+      .pipe(gulp.dest('src'));
+});
 
 
 gulp.task("style", function() {
-  return gulp.src("less/style.less")
+  return gulp.src("src/less/style.less")
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss([
       autoprefixer({browsers: "last 2 versions"})
     ]))
-    .pipe(gulp.dest("css"));
+    .pipe(gulp.dest("src/css"));
 });
 
 
 gulp.task("start", ["style"], function() {
-  gulp.watch("less/**/*.less", ["style"]);
+  gulp.watch("src/less/**/*.less", ["style"]);
 });
 
 gulp.task("clean", function () {

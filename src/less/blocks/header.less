@@ -1,0 +1,498 @@
+
+.page-header {
+  .clearfix;
+
+  &__to-right {
+    float: right;
+  }
+}
+
+//logo
+
+.logo {
+  float: left;
+  margin-top: 10px;
+  margin-right: 14px;
+
+  svg {
+    fill: #fff;
+  }
+}
+
+
+// main navigation
+
+.menu {
+  float: left;
+  margin-top: 28px;
+  margin-right: 20px;
+  width: 600px;
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-bottom: 5px;
+
+    &--active {
+      padding: 0;
+      padding-bottom: 20px;
+
+      .menu__item-link {
+        background-color: @pink-82;
+        color: #fff;
+        border-radius: 14px;
+        border: none;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 11px;
+        padding-right: 11px;
+      }
+    }
+
+    &:hover {
+      padding: 0;
+      padding-bottom: 20px;
+
+      .menu__item-link {
+        background-color: @bright-97;
+        border-radius: 14px;
+        border: none;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 11px;
+        padding-right: 11px;
+        color: @dark-20;
+      }
+
+      .drop-list {
+        display: block;
+      }
+    }
+
+    &:active {
+      .menu__item-link {
+        box-shadow: inset 0 2px 1px rgba(105, 105, 105, 1),
+                    0 3px 7px rgba(0,0,0,0.35);
+      }
+    }
+  }
+
+  &__item-link {
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+.drop-list {
+  display: none;
+  position: absolute;
+  min-width: 143px;
+  top: 32px;
+  left: -9px;
+  background-color: @bright-97;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 2;
+
+  &__item {
+
+    &--new {
+      border-bottom: 1px solid @bright-82;
+      margin-left: 5px;
+      margin-right: 5px;
+
+      &:hover {
+        border: none;
+        margin: 0;
+
+        a {
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-bottom: 9px;
+        }
+      }
+
+      a {
+        font-weight: 700;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    &--active {
+      background-color: @pink-82;
+
+      a {
+        &:hover {
+          background-color: @pink-82;
+        }
+
+        &:active {
+          background-color: @pink-82;
+        }
+      }
+    }
+  }
+
+  &__item-link{
+    display: block;
+    color: @dark-20;
+    font-size:  @font-size-base - 2px;
+    text-decoration: none;
+    font-weight: 400;
+    padding-bottom: 5px;
+    padding-top: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &:hover {
+      background-color: @pink-98;
+      border-radius: 0;
+    }
+
+    &:active {
+      background-color: @pink-96;
+    }
+
+
+  }
+}
+
+// user menu
+
+.user-menu {
+  margin-top: 23px;
+  font-size: 0;
+  margin-bottom: 10px;
+}
+
+
+//search
+
+.search {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 9px;
+  position: relative;
+  padding-bottom: 5px;
+
+
+
+  &__btn {
+    position: relative;
+    width: 33px;
+    height: 32px;
+    border-radius: 50%;
+    background-color:  rgba(255, 255, 255, 0.2);
+
+    svg {
+      position: absolute;
+      fill: #fff;
+      width: 17px;
+      height: 17px;
+      top: 7px;
+      left: 8px;
+    }
+  }
+
+  &:hover {
+    .search__btn {
+      background-color: @bright-97;
+    }
+
+    svg {
+      fill: @dark-20;
+    }
+
+    .search-form {
+      display: block;
+    }
+  }
+}
+
+.search-form {
+    display: none;
+    position: absolute;
+    top: 37px;
+    left: -307px;
+    width: 312px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-color: @bright-97;
+    border-radius: 4px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+
+
+  &__field {
+    .form-font;
+    width: 287px;
+    height: 36px;
+    border: 1px solid @bright-83;
+    border-radius: 3px;
+    padding-left: 11px;
+    padding-right: 11px;
+    outline: none;
+
+    &:hover {
+      width: 285px;
+      height: 34px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border: 2px solid @bright-83;
+    }
+
+    &:focus {
+      width: 285px;
+      height: 34px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border: 2px solid @blue-93;
+    }
+
+    &::-webkit-input-placeholder {
+      .placeholder-font;
+      font-size: @font-size-base - 2px;
+    }
+
+    &:-moz-placeholder {
+      .placeholder-font;
+      font-size: @font-size-base - 2px;
+    }
+
+    &::-moz-placeholder {
+      .placeholder-font;
+      font-size: @font-size-base - 2px;
+    }
+
+    &:-ms-input-placeholder {
+      .placeholder-font;
+      font-size: @font-size-base - 2px;
+    }
+  }
+}
+
+
+
+//login
+
+.login {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 8px;
+  position: relative;
+  padding-bottom: 5px;
+
+  &__btn {
+    position: relative;
+    background-color:  rgba(255, 255, 255, 0.2);
+    padding-right: 19px;
+    padding-left: 42px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+
+    svg {
+      position: absolute;
+      fill: #fff;
+      width: 20px;
+      height: 19px;
+      left: 16px;
+      top: 6px;
+    }
+  }
+
+  &__btn-name {
+    display: block;
+    font-size: @font-size-base - 2px;
+    font-weight: 500;
+  }
+
+  &:hover {
+    .login__btn {
+      background-color: @bright-97;
+
+      svg {
+        fill: @dark-20;
+      }
+    }
+
+    .login__btn-name {
+      color: @dark-20;
+    }
+
+    .login-form {
+      display: block;
+    }
+  }
+}
+
+.login-form {
+  display: none;
+  position: absolute;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 15px;
+  width: 241px;
+  background-color: @bright-97;
+  border-radius: 4px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+  top: 37px;
+  left: -178px;
+  z-index: 2;
+
+  &__field {
+    .form-font;
+    width: 209px;
+    height: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid @bright-83;
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 10px;
+
+    &:hover {
+      width: 207px;
+      height: 33px;
+      padding-left: 14px;
+      padding-right: 14px;
+      border: 2px solid @bright-83;
+    }
+
+    &:focus {
+      width: 207px;
+      height: 33px;
+      padding-left: 14px;
+      padding-right: 14px;
+      border: 2px solid @blue-93;
+    }
+
+    &::-webkit-input-placeholder {
+      .placeholder-font;
+      font-size: @font-size-base - 2px;
+    }
+
+    &:-moz-placeholder {
+      .placeholder-font;
+      font-size: @font-size-base - 2px;
+    }
+
+    &::-moz-placeholder {
+      .placeholder-font;
+      font-size: @font-size-base - 2px;
+    }
+
+    &:-ms-input-placeholder {
+      .placeholder-font;
+      font-size: @font-size-base - 2px;
+    }
+  }
+
+  &__menu {
+    float: right;
+    margin-top: 5px;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: @dark-20;
+    line-height: 14px;
+    font-size: @font-size-base - 3px;
+    font-weight: 400;
+
+    &:first-child {
+      margin-bottom: 7px;
+    }
+
+    span {
+      display: inline;
+      border-bottom: 1px solid @gray-68;
+    }
+
+    &:hover {
+      color: @pink-93;
+      span {
+        border-bottom: 1px solid @pink-98;
+      }
+    }
+  }
+
+}
+
+//cart
+
+.cart {
+  display: inline-block;
+  vertical-align: top;
+
+  &__btn {
+    position: relative;
+    background-color:  rgba(255, 255, 255, 0.2);
+    padding-right: 34px;
+    padding-left: 45px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+
+     svg {
+      fill: #fff;
+      position: absolute;
+      width: 20px;
+      height: 19px;
+      left: 17px;
+      top: 6px;
+    }
+
+    span {
+      display: block;
+      font-size: @font-size-base - 2px;
+      font-weight: 500;
+    }
+
+  }
+
+  &__block {
+    display: none;
+  }
+}
+
+
+//contact block
+
+.contact {
+  text-align: right;
+
+  &__time {
+    font-size: @font-size-base - 2px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  &__phone {
+    font-size: @font-size-base + 6px;
+    font-weight: 700;
+  }
+}
+
+

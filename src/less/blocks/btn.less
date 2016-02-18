@@ -1,0 +1,99 @@
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 18px;
+  box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
+  background-image: linear-gradient(to top, @red-91, @red-95);
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
+    background-image: linear-gradient(to top, @red-93, @red-96);
+  }
+
+  &:active {
+    box-shadow: inset 0 2px 2px rgba(148, 39, 24, 1);
+    background-image: linear-gradient(to top, @red-88, @red-84);
+  }
+
+  &--login {
+    font-size: @font-size-base - 1px;
+    font-weight: 700;
+    min-width: 102px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+  }
+
+  &--slide {
+    width: 260px;
+    font-size: @font-size-base + 15px;
+    font-weight: 700;
+    line-height: 31px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 40px;
+    text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
+  }
+
+  &--banner {
+    float: right;
+    min-width: 145px;
+    font-size: @font-size-base + 2px;
+    font-weight: 700;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 25px;
+
+    &--choco {
+      min-width: 169px;
+    }
+  }
+
+  &--item-preview {
+    width: 173px;
+    font-size: @font-size-base - 1px;
+    font-weight: 700;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  &--mailing-submit {
+    border: none;
+    outline: none;
+    width: 129px;
+    font-weight: 700;
+    font-size: @font-size-base + 1px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border-radius: 20px
+  }
+
+  &--contact-form {
+    width: 232px;
+    font-weight: 700;
+    font-size: @font-size-base + 1px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  &--contact-form-submit {
+    width: 139px;
+    font-weight: 700;
+    font-size: @font-size-base + 1px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+  }
+
+}

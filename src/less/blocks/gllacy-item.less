@@ -1,0 +1,102 @@
+.best-sellers {
+  width: 1156px;
+  margin: 0 auto;
+
+  &__list {
+    font-size: 0;
+  }
+}
+
+.gllacy-item {
+  width: 267px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 16px;
+  margin-bottom: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  text-align: center;
+
+
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &__img {
+    width: 267px;
+    height: 267px;
+    overflow: hidden;
+    margin-bottom: 13px;
+  }
+
+  &__price {
+    position: absolute;
+    left: 5px;
+    top: 215px;
+
+    span {
+      display: inline-block;
+      vertical-align: top;
+      font-weight: 700;
+      font-size: @font-size-h2 + 10px;
+      text-shadow: 0 1px 3px rgba(49, 50, 53, 0.5);
+      line-height: 45px;
+    }
+  }
+
+  &--best {
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 61px;
+      height: 61px;
+      background: url("../image/hit-label.png") no-repeat 100% 100%;
+      z-index: 2;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: @font-size-base;
+    padding-left: 7px;
+    padding-right: 7px;
+    text-align: center;
+
+    span {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &__hover {
+    display: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    position: absolute;
+    width: 267px;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  &:hover {
+    .gllacy-item__hover {
+      display: inline-block;
+    }
+  }
+}
+
+.currency {
+  display: inline-block;
+  vertical-align: top;
+  background: data-uri("../image/ico-rub.svg") no-repeat 100% 100%;
+  width: 32px;
+  height: 42px;
+}

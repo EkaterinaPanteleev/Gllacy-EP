@@ -1,0 +1,167 @@
+.contact-form {
+  display: none;
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba( 0, 0, 0, 0.3);
+  z-index: 10;
+
+  &__popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    margin-left: -214px;
+    width: 428px;
+    padding-left: 24px;
+    padding-right: 25px;
+    padding-top: 18px;
+    padding-bottom: 25px;
+    background-color: @bright-97;
+    border-radius: 7px;
+    text-align: right;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 17px;
+      top: 15px;
+      right: 15px;
+      background: data-uri("../image/ico-cross.svg") no-repeat;
+      cursor: pointer;
+
+    }
+  }
+
+  &__header {
+    font-size: @font-size-base + 8px;
+    font-weight: 500;
+    color: @gray-21;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  &__field {
+    .form-font;
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 235px;
+    height: 40px;
+    border: 1px solid @bright-83;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    outline: none;
+
+    &:hover {
+      width: 233px;
+      height: 38px;
+      padding-left: 14px;
+      padding-right: 14px;
+      border: 2px solid @bright-83;
+    }
+
+    &:focus {
+      width: 233px;
+      height: 38px;
+      padding-left: 14px;
+      padding-right: 14px;
+      border: 2px solid @blue-93;
+
+      & ~ .contact-form__label-box {
+        label {
+          font-size: @font-size-base - 5px;
+          color: @blue-87;
+          transform: translateY(-30px);
+        }
+      }
+    }
+
+    &:valid ~ .contact-form__label-box {
+      label {
+          font-size: @font-size-base - 5px;
+          color: @blue-87;
+          transform: translateY(-30px);
+        }
+    }
+}
+
+
+  &__label-box {
+    position: relative;
+    width: 235px;
+
+    label {
+      position: absolute;
+      display: block;
+      top: -53px;
+      left: 15px;
+      .placeholder-font;
+      color: @gray-40;
+      pointer-events: none;
+    }
+
+    &--message {
+      label {
+        top: -170px;
+      }
+    }
+  }
+
+  &__message {
+    .form-font;
+    display: block;
+    width: 396px;
+    height: 133px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid @bright-83;
+    border-radius: 3px;
+    outline: none;
+    resize: none;
+    margin-bottom: 25px;
+
+    &:hover {
+      width: 394px;
+      height: 131px;
+      padding-left: 14px;
+      padding-right: 14px;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      border: 2px solid @bright-83;
+      margin-bottom: 27px;
+    }
+
+    &:focus {
+      width: 394px;
+      height: 131px;
+      padding-left: 14px;
+      padding-right: 14px;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      border: 2px solid @blue-93;
+      margin-bottom: 27px;
+
+      & ~ .contact-form__label-box {
+        label {
+          font-size: @font-size-base - 5px;
+          color: @blue-87;
+          transform: translateY(-30px);
+        }
+      }
+    }
+
+    &:valid ~ .contact-form__label-box {
+      label {
+          font-size: @font-size-base - 5px;
+          color: @blue-87;
+          transform: translateY(-30px);
+        }
+    }
+
+  }
+}
