@@ -72,7 +72,7 @@ gulp.task("clean", function () {
 });
 
 gulp.task("compile", function() {
-    return gulp.src("source/less/style.less")
+    return gulp.src("src/less/style.less")
     .pipe(plumber())
     .pipe(less())
     .pipe(postcss([
@@ -88,22 +88,22 @@ gulp.task("compile", function() {
 
 gulp.task("copy", function() {
   return gulp.src([
-                    "source/index.html",
-                    "source/form.html"], {
-    base: "source"
+                    "src/index.html",
+                    "src/catalog.html"], {
+    base: "src"
   })
   .pipe(gulp.dest("build"));
 });
 
 
 gulp.task("compress", function() {
-  gulp.src("source/img/*")
+  gulp.src("src/image/*")
   .pipe(imagemin())
-  .pipe(gulp.dest("build/img"));
+  .pipe(gulp.dest("build/image"));
 });
 
 gulp.task("script", function() {
-  return gulp.src(["source/js/*.js", "source/js/vendors/*.js"])
+  return gulp.src(["src/js/*.js", "src/js/vendors/*.js"])
     .pipe(concat("script.js"))
     .pipe(gulp.dest("build/js"))
     .pipe(uglify())
