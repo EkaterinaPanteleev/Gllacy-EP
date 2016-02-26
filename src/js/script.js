@@ -1,6 +1,8 @@
 (function(){
   //map
-  ymaps.ready(init);
+  if (typeof ymaps !== 'undefined') {
+    ymaps.ready(init);
+  }
   var myMap,
     myPlacemark;
 
@@ -24,6 +26,30 @@
     );
 
     myMap.geoObjects.add(myPlacemark);
-};
+  };
+
+  //popups
+  var contactForm = document.querySelector(".contact-form");
+  var contactOpen = document.querySelector(".btn--contact-form");
+  var contactClose = document.querySelector(".contact-form__close");
+
+  contactOpen.addEventListener("tap", function(event) {
+    event.preventDefault();
+    contactForm.classList.add("contact-form--show");
+  });
+
+  contactClose.addEventListener("tap", function(event) {
+    event.preventDefault();
+    contactForm.classList.remove("contact-form--show");
+  });
+
+  window.addEventListener("keydown", function(event){
+  if (event.keyCode == 27){
+    if (contactForm.classList.contains("contact-form--show")) {
+      contactForm.classList.remove("contact-form--show");
+    }
+  }
+});
+
 
 })();

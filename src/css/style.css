@@ -1445,8 +1445,8 @@ body .slider-radio {
   border-radius: 7px;
   text-align: right;
 }
-.contact-form__popup:before {
-  content: "";
+.contact-form__close {
+  display: block;
   position: absolute;
   width: 18px;
   height: 17px;
@@ -1569,6 +1569,12 @@ body .slider-radio {
   -webkit-transform: translateY(-30px);
           transform: translateY(-30px);
 }
+.contact-form--show {
+  display: block;
+}
+/* .contact-form--show {
+  display: block;
+} */
 .page-footer {
   padding-bottom: 25px;
 }

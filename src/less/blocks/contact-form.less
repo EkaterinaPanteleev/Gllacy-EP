@@ -21,18 +21,17 @@
     background-color: @bright-97;
     border-radius: 7px;
     text-align: right;
+  }
 
-    &:before {
-      content: "";
-      position: absolute;
-      width: 18px;
-      height: 17px;
-      top: 15px;
-      right: 15px;
-      background: data-uri("../image/ico-cross.svg") no-repeat;
-      cursor: pointer;
-
-    }
+  &__close {
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 17px;
+    top: 15px;
+    right: 15px;
+    background: data-uri("../image/ico-cross.svg") no-repeat;
+    cursor: pointer;
   }
 
   &__header {
@@ -162,6 +161,13 @@
           transform: translateY(-30px);
         }
     }
+  }
 
+  &--show {
+    display: block;
   }
 }
+/* .contact-form--show {
+  display: block;
+} */
+
