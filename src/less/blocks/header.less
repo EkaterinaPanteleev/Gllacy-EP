@@ -193,8 +193,6 @@
   position: relative;
   padding-bottom: 5px;
 
-
-
   &__btn {
     position: relative;
     width: 33px;
@@ -445,35 +443,162 @@
 .cart {
   display: inline-block;
   vertical-align: top;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 5px;
 
   &__btn {
-    position: relative;
+    width: 73px;
     background-color:  rgba(255, 255, 255, 0.2);
-    padding-right: 34px;
     padding-left: 45px;
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 15px;
+  }
 
-     svg {
+  &__btn-name {
+    display: block;
+    font-size: @font-size-base - 2px;
+    font-weight: 500;
+  }
+
+  &__ico {
+    position: relative;
+
+    svg {
       fill: #fff;
       position: absolute;
       width: 20px;
       height: 19px;
-      left: 17px;
-      top: 6px;
-    }
-
-    span {
-      display: block;
-      font-size: @font-size-base - 2px;
-      font-weight: 500;
+      left: -28px;
+      top: 1px;
     }
 
   }
 
+  &--full {
+    .cart__btn {
+      background-color: @bright-97;
+
+      svg {
+        fill: @dark-20;
+      }
+    }
+
+    .cart__btn-name {
+      color: @dark-20;
+    }
+
+    .cart__ico {
+
+      &:before {
+        content: "";
+        position: absolute;
+        background: data-uri("../image/ico-cart--red.svg") no-repeat;
+        width: 15px;
+        height: 10px;
+        top: 4px;
+        left: -24px;
+      }
+    }
+  }
+
+  &:hover {
+
+    .cart__block {
+      display: block;
+    }
+  }
+
   &__block {
     display: none;
+    position: absolute;
+    top: 37px;
+    right: 0;
+    width: 510px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    background-color: @bright-97;
+    border-radius: 4px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  &__list {
+    display: block;
+    margin-bottom: 10px;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: @bright-82;
+    }
+
+    tbody {
+      display: block;
+    }
+
+    tr {
+      display: block;
+    }
+  }
+}
+
+.cart-item {
+  position: relative;
+  font-size: @font-size-base - 3px;
+  color: @dark-20;
+  margin-bottom: 20px;
+  padding-left: 26px;
+  vertical-align: middle;
+  line-height: 15px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    left: 2px;
+    top: 10px;
+    background: data-uri("../image/ico-cross-sm.svg") no-repeat center center;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 33px;
+    height: 33px;
+    overflow: hidden;
+    padding-right: 14px;
+  }
+
+  &__title {
+    width: 220px;
+  }
+
+  &__qty {
+    padding: 0;
+    width: 150px;
+    text-align: center;
+  }
+
+  &__price {
+    font-size: @font-size-base - 3px;
+    opacity: 0.6;
+  }
+}
+
+.order {
+  text-align: right;
+
+  &__final-summ {
+    font-weight: 700;
+    font-size: @font-size-base - 1px;
+    color: @dark-20;
+    margin-right: 10px;
+    margin-bottom:  10px;
   }
 }
 

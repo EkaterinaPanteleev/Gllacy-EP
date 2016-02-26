@@ -96,4 +96,48 @@
     border-radius: 20px;
   }
 
+  &--order {
+    width: 160px;
+    font-weight: 700;
+    font-size: @font-size-base - 1px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: none;
+    outline: none;
+  }
+
+  &--filter-submit {
+    vertical-align: bottom;
+    width: 144px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 0;
+    outline: none;
+    background-image: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: @font-size-base;
+
+    &:hover {
+      background-image: none;
+      box-shadow: none;
+      background-color: rgba(255, 255, 255, 1);
+      color: @dark-20;
+    }
+
+    &:active {
+      border: none;
+      background-image: none;
+      color: @dark-20;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      background-color: rgba(255, 255, 255, 1);
+      box-shadow: inset 0px 2px 1px rgba(105, 105, 105, 1);
+    }
+
+  }
+
 }
