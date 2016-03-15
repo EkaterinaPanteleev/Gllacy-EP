@@ -1,20 +1,26 @@
 
 .promo {
   .clearfix;
-  margin-bottom: 35px;
+
 }
 
 .banner {
-  width: 520px;
+  .make-column(2);
   float: left;
+  margin-bottom: 35px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 15px;
   padding-bottom: 26px;
-  margin-right: 26px;
+  box-sizing: border-box;
+  min-height: 229px;
+  border-radius: 11px;
 
-  &:last-child {
-    margin-right: 0;
+  &:nth-child(2n){
+      margin-right: 2.3%;
+    }
+  &:nth-child(2n+1){
+    margin-left: 2.3%;
   }
 
   &__title {
@@ -33,10 +39,12 @@
 
   &--berry {
     background: url("../image/banner1.png") no-repeat top center;
+    background-size: cover;
   }
 
   &--choco {
     background: url("../image/banner2.png") no-repeat top center;
+    background-size: cover;
   }
 }
 

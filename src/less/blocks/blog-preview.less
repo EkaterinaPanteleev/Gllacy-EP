@@ -1,14 +1,17 @@
 .blog-preview {
+
+  .make-column(2);
+  margin-left: 2.3%;
   float: left;
-  width: 520px;
-  margin-right: 26px;
+  box-sizing: border-box;
   margin-bottom: 40px;
   border-radius: 15px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
-  min-height: 200px;
+  min-height: 220px;
   background: #fff url("../image/bg-strawberry.png") no-repeat 100% 100%;
+  background-size: cover;
 
   &__title {
     margin-top: 23px;
@@ -26,6 +29,7 @@
       font-weight: 700;
       color: @gray-21;
       line-height: 30px;
+      text-decoration: underline;
     }
   }
 }

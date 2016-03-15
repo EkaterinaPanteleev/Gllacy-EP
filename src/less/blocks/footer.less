@@ -6,11 +6,11 @@
 // social btns
 
 .social {
+  .make-column(1);
+  margin-left: 2.3%;
   float: left;
-  width: 293px;
   font-size: 0;
   padding-top: 36px;
-  margin-right: 105px;
 
   &__btn {
     position: relative;
@@ -47,7 +47,6 @@
         border-radius: 50%;
         box-shadow: inset 0 2px 1px rgba(136, 136, 136, 1);
         z-index: 2;
-
       }
     }
   }
@@ -56,13 +55,14 @@
 //menu
 
 .footer-menu {
+  .make-column(2);
   float: left;
-  width: 350px;
   padding-top: 33px;
-  //margin-right: 100px;
+  box-sizing: border-box;
 
   &__list {
     font-size: 0;
+    text-align: center;
   }
 
   &__col-1 {
@@ -70,11 +70,13 @@
     vertical-align: top;
     margin-right: 32px;
     padding-left: 23px;
+    text-align: left;
   }
 
   &__col-2 {
     display: inline-block;
     vertical-align: top;
+    text-align: left;
   }
 
 
@@ -117,14 +119,13 @@
 
 .develop {
   float: right;
-  width: 190px;
+  .make-column(1);
+  margin-right: 2.3%;
   padding-top: 19px;
   text-align: right;
 
   &__logo {
-    text-align: left;
-    width: 108px;
-    height: 40px;
+    padding-right: 80px;
 
     svg {
       width: 108px;
@@ -135,6 +136,7 @@
 
   &__cont {
     font-size: @font-size-base - 4px;
+    line-height: 16px;
 
     a {
       text-decoration: none;

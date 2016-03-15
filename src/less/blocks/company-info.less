@@ -1,9 +1,7 @@
 .company-info {
-  width: 1116px;
+  .row-margin();
   border-radius: 13px;
   padding-top: 22px;
-  padding-left: 20px;
-  padding-right: 10px;
   margin-bottom: 42px;
 
   background: @bright-95 url("../image/bg-waffle.jpg") 100% 100%;
@@ -14,6 +12,7 @@
     line-height: 30px;
     color: @dark-20;
     margin-bottom: 23px;
+    margin-left: 20px;
   }
 
   &__features-list {
@@ -21,15 +20,20 @@
   }
 
   &__feature {
+    .make-column(2);
     position: relative;
     display: inline-block;
     vertical-align: top;
-    width: 493px;
     padding-left: 57px;
     margin-bottom: 21px;
+    box-sizing: border-box;
 
-    &:nth-child(2n-1) {
-      margin-right: 15px;
+    &:nth-child(2n) {
+      margin-right: 2.3%;
+    }
+
+    &:nth-child(2n+1) {
+      margin-left: 2.3%;
     }
 
     &:before {

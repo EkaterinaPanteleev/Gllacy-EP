@@ -7,6 +7,39 @@
   }
 }
 
+.img-responsive(){
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.row-margin(){
+  margin: 0 2.3%;
+}
+
+.make-row(){
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.make-column(1){
+  width: @column;
+  margin-right: @column-margin;
+}
+
+
+.make-column(2){
+  width: @column*2 + @column-margin;
+  margin-right: @column-margin;
+}
+
 .form-font {
   font-weight: 700;
   color: @gray-21;
